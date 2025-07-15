@@ -250,38 +250,51 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <div class="flex flex-col lg:flex-row items-center justify-between gap-10 px-4 py-12 max-w-7xl mx-auto">
-  <!-- Left Text Section -->
-  <div class="lg:w-1/2 space-y-6">
-    <h2 class="text-4xl font-extrabold text-[#f5d97d] leading-tight">
-      India’s Biggest Consulting Summit:
-      <span class="text-white block md:inline">AI CHANAKYA SAMRAJYA</span>
-    </h2>
+  <!-- Hero Section -->
+<section id="hero" class="pt-32 pb-20 md:py-32 px-6 md:px-12 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    
+    <!-- Left Text Content -->
+    <div class="fade-in">
+      <h1 class="font-serif text-3xl md:text-5xl font-bold leading-tight text-white">
+        <span class="gold-text">India's Biggest Consulting Summit:</span> Ai Samrajya
+      </h1>
+      <br />
+      <h2 class="text-base md:text-lg font-normal leading-relaxed text-white">
+        Build your Empire with Ancient Indian Strategy, AI Systems and Shobhit's Mentorship: 
+        Be the Modern AI Chanakya aka Consultant.
+      </h2>
 
-    <p class="text-lg text-white leading-relaxed">
-      Build your Empire with Ancient Indian Strategy, AI Systems and Shobhit's Mentorship:
-      <span class="font-semibold">Be the Modern AI Chanakya aka Consultant.</span>
-    </p>
-
-    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-      <button class="bg-gradient-to-r from-[#f5d97d] to-[#d6b44c] text-black font-semibold px-6 py-3 rounded-md shadow-md hover:scale-105 transition">
-        Reserve Your Seat for ₹95
-      </button>
-      <div class="flex items-center text-sm text-white gap-2">
-        <svg class="w-5 h-5 text-[#f5d97d]" fill="currentColor" viewBox="0 0 20 20"><path d="..." /></svg>
-        September 2nd, 2025 4pm to 8pm
+      <div class="mt-8 flex flex-col sm:flex-row gap-4">
+        <a href="#register" class="gold-button text-center text-lg">Reserve Your Seat for ₹95</a>
+        <p class="text-sm text-gray-400 flex items-center mt-2 sm:mt-0 sm:ml-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          September 2nd, 2025 4pm to 8pm
+        </p>
       </div>
     </div>
-  </div>
 
-  <!-- Right Image Section -->
-  <div class="lg:w-1/2">
-    <img src="CHATGPT image.png" alt="Consulting Visual" class="w-full max-w-md rounded-lg shadow-lg" />
-  </div>
-</div>
+    <!-- Right Image Content -->
+    <div class="relative scene flex justify-center">
+      <!-- Gold bordered image box with overlay -->
+      <div class="aspect-square w-full max-w-md rounded-[1.5rem] overflow-hidden border-[3px] border-[#D4AF37] shadow-lg relative">
+        <!-- Golden gradient overlay -->
+        <div class="absolute inset-0 bg-gradient-to-tr from-[#D4AF37]/20 to-transparent rounded-[1.5rem] pointer-events-none z-10"></div>
 
-        
+        <!-- Actual image -->
+        <img src="CHATGPT image.png" alt="Consulting Graphic" class="w-full h-full object-cover z-0" />
+      </div>
+
+      <!-- Optional particles layer -->
+      <div class="particles" id="particles"></div>
+    </div>
+
+  </div>
+</section>
+
         <!-- Floating 3D elements -->
         <div class="absolute top-1/4 right-10 w-20 h-20 opacity-20 floating" style="animation-delay: -2s;">
             <svg class="chakra" viewBox="0 0 100 100" fill="#D4AF37">
