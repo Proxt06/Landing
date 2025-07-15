@@ -1,255 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>India's Biggest Consulting Summit | Shobhit Singhal</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'matte-black': '#121212',
-                        'gold': '#D4AF37',
-                        'gold-light': '#F2E6C2',
-                    },
-                    fontFamily: {
-                        'serif': ['Playfair Display', 'serif'],
-                        'sans': ['Poppins', 'sans-serif'],
-                    },
-                }
-            }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>India's Biggest Consulting Summit | Shobhit Singhal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'matte-black': '#121212',
+            'gold': '#D4AF37',
+            'gold-light': '#F2E6C2',
+          },
+          fontFamily: {
+            'serif': ['Playfair Display', 'serif'],
+            'sans': ['Poppins', 'sans-serif'],
+          },
         }
-    </script>
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            background-color: #121212;
-            color: #fff;
-            overflow-x: hidden;
-        }
-        .gold-text {
-            color: #D4AF37;
-        }
-        .logo-link {
-            display: inline-block;
-            text-decoration: none;
-            }
+      }
+    }
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: #121212;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    .gold-text {
+      color: #D4AF37;
+    }
+    .logo-link {
+      display: inline-block;
+      text-decoration: none;
+    }
+    .logo-image {
+      width: 150px;
+      height: auto;
+      max-height: 80px;
+    }
+    .temple-divider {
+      position: relative;
+      height: 60px;
+      width: 100%;
+      margin: 2rem 0;
+    }
+    .temple-divider::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      max-width: 600px;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(212,175,55,0) 0%, rgba(212,175,55,1) 50%, rgba(212,175,55,0) 100%);
+    }
+    .temple-divider::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 30px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30' fill='%23D4AF37'%3E%3Cpath d='M30 0L60 30H0L30 0z'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .chakra {
+      animation: rotate 20s linear infinite;
+    }
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .gold-button {
+      background: linear-gradient(45deg, #D4AF37, #F2E6C2, #D4AF37);
+      background-size: 200% 200%;
+      animation: shimmer 3s infinite;
+      color: #121212;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.375rem;
+      transition: all 0.3s ease;
+    }
+    .gold-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+    }
+    @keyframes shimmer {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .floating {
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+    .particles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+    .particle {
+      position: absolute;
+      background-color: rgba(212, 175, 55, 0.6);
+      border-radius: 50%;
+      opacity: 0;
+    }
+    .quote-float {
+      position: fixed;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      max-width: 200px;
+      padding: 15px;
+      background-color: rgba(18, 18, 18, 0.8);
+      border-left: 2px solid #D4AF37;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      z-index: 10;
+    }
+    .faq-item {
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    }
+    .faq-question {
+      cursor: pointer;
+      padding: 1.5rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-answer.active {
+      max-height: 500px;
+      padding-bottom: 1.5rem;
+    }
+    .logo-placeholder {
+      width: 120px;
+      height: 40px;
+      background-color: rgba(212, 175, 55, 0.2);
+      border: 1px dashed #D4AF37;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #D4AF37;
+      font-size: 10px;
+      text-align: center;
+    }
+    .image-placeholder {
+      background-color: rgba(212, 175, 55, 0.1);
+      border: 1px dashed #D4AF37;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #D4AF37;
+      text-align: center;
+    }
+    .watermark {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      opacity: 0.1;
+      pointer-events: none;
+    }
+    .flute {
+      position: absolute;
+      bottom: 40px;
+      left: 40px;
+      opacity: 0.1;
+      transform: rotate(-30deg);
+      pointer-events: none;
+    }
+    .scene {
+      perspective: 1000px;
+    }
+    .card-3d {
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
+    }
+    .card-3d:hover {
+      transform: rotateY(10deg) rotateX(5deg);
+    }
+    @media (max-width: 768px) {
+      .quote-float {
+        display: none;
+      }
+      .temple-divider::before {
+        width: 90%;
+      }
+    }
 
-        .logo-image {
-            width: 150px;      /* Adjust based on your logo size */
-            height: auto;      /* Maintains aspect ratio */
-            max-height: 80px;  /* Optional: cap height if needed */
-            }   
+    /* ✅ Glitter Logo Effect */
+    .glitter-logo {
+      position: relative;
+    }
 
+    .glitter-logo::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 200%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      animation: glitter-move 3s infinite linear;
+      pointer-events: none;
+      z-index: 1;
+      mix-blend-mode: screen;
+    }
 
-        .temple-divider {
-            position: relative;
-            height: 60px;
-            width: 100%;
-            margin: 2rem 0;
-        }
-        .temple-divider::before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80%;
-            max-width: 600px;
-            height: 2px;
-            background: linear-gradient(90deg, rgba(212,175,55,0) 0%, rgba(212,175,55,1) 50%, rgba(212,175,55,0) 100%);
-        }
-        .temple-divider::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 60px;
-            height: 30px;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30' fill='%23D4AF37'%3E%3Cpath d='M30 0L60 30H0L30 0z'/%3E%3C/svg%3E");
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-        .chakra {
-            animation: rotate 20s linear infinite;
-        }
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .gold-button {
-            background: linear-gradient(45deg, #D4AF37, #F2E6C2, #D4AF37);
-            background-size: 200% 200%;
-            animation: shimmer 3s infinite;
-            color: #121212;
-            font-weight: 600;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.375rem;
-            transition: all 0.3s ease;
-        }
-        .gold-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
-        }
-        @keyframes shimmer {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-        .particles {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-        }
-        .particle {
-            position: absolute;
-            background-color: rgba(212, 175, 55, 0.6);
-            border-radius: 50%;
-            opacity: 0;
-        }
-        .quote-float {
-            position: fixed;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            max-width: 200px;
-            padding: 15px;
-            background-color: rgba(18, 18, 18, 0.8);
-            border-left: 2px solid #D4AF37;
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            z-index: 10;
-        }
-        .faq-item {
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-        }
-        .faq-question {
-            cursor: pointer;
-            padding: 1.5rem 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-        .faq-answer.active {
-            max-height: 500px;
-            padding-bottom: 1.5rem;
-        }
-        .logo-placeholder {
-            width: 120px;
-            height: 40px;
-            background-color: rgba(212, 175, 55, 0.2);
-            border: 1px dashed #D4AF37;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #D4AF37;
-            font-size: 10px;
-            text-align: center;
-        }
-        .image-placeholder {
-            background-color: rgba(212, 175, 55, 0.1);
-            border: 1px dashed #D4AF37;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #D4AF37;
-            text-align: center;
-        }
-        .watermark {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            opacity: 0.1;
-            pointer-events: none;
-        }
-        .flute {
-            position: absolute;
-            bottom: 40px;
-            left: 40px;
-            opacity: 0.1;
-            transform: rotate(-30deg);
-            pointer-events: none;
-        }
-        
-        /* 3D elements */
-        .scene {
-            perspective: 1000px;
-        }
-        .card-3d {
-            transform-style: preserve-3d;
-            transition: transform 0.6s;
-        }
-        .card-3d:hover {
-            transform: rotateY(10deg) rotateX(5deg);
-        }
-        
-        /* Mobile responsiveness */
-        @media (max-width: 768px) {
-            .quote-float {
-                display: none;
-            }
-            .temple-divider::before {
-                width: 90%;
-            }
-        }
-    </style>
+    @keyframes glitter-move {
+      0% {
+        left: -100%;
+      }
+      50% {
+        left: 100%;
+      }
+      100% {
+        left: 200%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-   <nav class="fixed top-0 left-0 w-full bg-matte-black/90 backdrop-blur-md z-50 py-4 px-6 md:px-12">
-  <div class="max-w-7xl mx-auto flex justify-between items-center">
-    
-    <!-- Logo with slightly curved sides -->
-    <a href="#" class="logo-link overflow-hidden rounded-xl">
-      <img src="ShobhitSinghal-Logo-final-black-bg.jpg" alt="Your Logo" class="logo-image h-12 w-auto object-contain">
-    </a>
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 w-full bg-matte-black/90 backdrop-blur-md z-50 py-4 px-6 md:px-12">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
 
-    <!-- Add nav links if needed -->
-    <!-- Example:
-    <div class="space-x-6 text-white">
-      <a href="#about" class="hover:text-gold transition">About</a>
-      <a href="#contact" class="hover:text-gold transition">Contact</a>
+      <!-- ✅ Logo: curved sides + thin border + glitter effect -->
+      <a href="#" class="logo-link overflow-hidden rounded-xl border border-gold border-[0.5px] glitter-logo">
+        <img src="ShobhitSinghal-Logo-final-black-bg.jpg" alt="Your Logo" class="logo-image">
+      </a>
+
+      <!-- Navigation Links -->
+      <div class="hidden md:flex space-x-8">
+        <a href="#learn" class="text-white hover:text-gold transition-colors">Learn</a>
+        <a href="#why" class="text-white hover:text-gold transition-colors">Why Attend</a>
+        <a href="#bonuses" class="text-white hover:text-gold transition-colors">Bonuses</a>
+        <a href="#about" class="text-white hover:text-gold transition-colors">About</a>
+        <a href="#faq" class="text-white hover:text-gold transition-colors">FAQ</a>
+      </div>
+
+      <!-- Call to Action -->
+      <a href="#register" class="gold-button text-sm md:text-base">Reserve Your Seat</a>
+
     </div>
-    -->
-    
-  </div>
-</nav>
+  </nav>
+</body>
+</html>
+
 
   <!-- Hero Section -->
 <section id="hero" class="pt-32 pb-20 md:py-32 px-6 md:px-12 relative overflow-hidden">
